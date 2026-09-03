@@ -16,27 +16,28 @@
 ## 第三步：把第二章代码拷进 workspace
 
 ```bash
-ls "/mnt/hgfs/ROS资料/ppt/2：ROS基础/ROS理论与实践_2.ROS基础_代码/"
+ls "/mnt/hgfs/src/chap2"
 ```
 
 确认能看到 `learning_communication` 和 `learning_tf` 两个文件夹，然后拷：
 
 ```sh
 mkdir -p ~/ros_ws/src
-cp -r "/mnt/hgfs/ROS资料/ppt/2：ROS基础/ROS理论与实践_2.ROS基础_代码/learning_communication" ~/ros_ws/src/
-cp -r "/mnt/hgfs/ROS资料/ppt/2：ROS基础/ROS理论与实践_2.ROS基础_代码/learning_tf" ~/ros_ws/src/
+cp -r "/mnt/hgfs/src/chap2/learning_communication" ~/ros_ws/src/
+cp -r "/mnt/hgfs/src/chap2/learning_tf" ~/ros_ws/src/
 ```
 
-一定要 `cp` 到 `~/catkin_ws/src` 再编，不要直接在 `/mnt/hgfs` 里编（共享目录编译会出符号链接问题）。
+一定要 `cp` 到 `~/ros_ws/src` 再编，不要直接在 `/mnt/hgfs` 里编（共享目录编译会出符号链接问题）。
 
 ## 第四步：编译
 
 ```bash
 echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+cd ~/ros_ws          # 在 ros_ws 根目录，不是 src 里
+catkin_make
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-cd ~/ros_ws/src
-catkin_make
 ```
 
 ## 第五步：运行
@@ -52,6 +53,10 @@ rosrun learning_communication talker        # 看到 hello world 0,1,2...
 rosrun learning_communication listener      # 看到 I heard: [hello world N]
 ```
 
+结果如下图所示：
+
+![image-20260903171401950](../img/code/chap2/Topic%20(PublishSubscribe).png)
+
 **② 服务（请求/应答）**
 
 ```bash
@@ -62,6 +67,10 @@ rosrun learning_communication server        # Ready to add two ints.
 # 终端3
 rosrun learning_communication client 5 6    # Sum: 11
 ```
+
+结果如下图所示：
+
+![image-20260903171517835](../img/code/chap2/Service%20(RequestResponse).png)
 
 **③ 动作（Action）**
 
@@ -74,12 +83,20 @@ rosrun learning_communication DoDishes_server
 rosrun learning_communication DoDishes_client   # 进度 10~100，最后 Yay!
 ```
 
+结果如下图所示：
+
+![image-20260903172643660](../img/code/chap2/Action.png)
+
 **④ 验证自定义消息/服务**
 
 ```bash
 rosmsg show learning_communication/Person
 rossrv show learning_communication/AddTwoInts
 ```
+
+结果如下图所示：
+
+![image-20260903172720338](../img/code/chap2/Verify%20custom%20messagesservices.png)
 
 **⑤ 海龟跑动**
 
@@ -93,6 +110,9 @@ rosrun turtlesim turtle_teleop_key
 # 鼠标点进键盘控制的那个终端，按方向键移动 turtle1，turtle2 会追着跑
 ```
 
+结果如下图所示：
+
+![image-20260903172818555](../img/code/chap2/The%20turtle%20is%20running.png)
 **6.海龟跟随**
 
 ```sh
@@ -103,3 +123,6 @@ roslaunch learning_tf start_demo_with_listener.launch
 # 鼠标点进键盘控制的那个终端，按方向键移动 turtle1，turtle2 会追着跑
 ```
 
+结果如下图所示：
+
+![image-20260903181216668](../img/code/chap2/The%20turtle%20follows.png)
