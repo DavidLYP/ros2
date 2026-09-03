@@ -19,19 +19,31 @@ ROS相关资料（[网盘下载地址](https://pan.baidu.com/s/1viua4SZ7tP2DtU2X
 * Windows虚拟机（密钥：ZF3R0-FHED2-M80TY-8QYGC-NPKYF）：*.exe
 * 补充：[ubuntu下虚拟机的运行方式](ubuntu下虚拟机的运行方式.md)
 
-ROS每章节运行代码:
 
-windows系统（通过虚拟机运行）：
+
+### 1.1 Windows系统（通过虚拟机运行） 
+
+[下载](https://ww2.mathworks.cn/support/product/robotics/ros2-vm-installation-instructions-v9.html)并安装好 ROS 的虚拟机。此虚拟机基于 Linux （Ubuntu 20.04 `lsb_release -a`）操作系统，并已预先配置为支持使用 ROS （ROS 1 Noetic 和 ROS 2 Humble） 构建的应用程序。
+
+
+ROS每章节运行代码:
 
 [第二章](<./Run_code_for_%20the_%20chapter/ROS理论与实践第二章代码运行.md>)
 
-linux系统：
+## 2. 地面载具
 
-## 2. ROS 桥接器
+* [建立虚拟机和地面载具之间的连接](./set_up_and_connect_to_carla.md)
 
-* [设置并连接到 Carla 模拟器](./set_up_and_connect_to_carla.md)
 
----
+## 3. 空域载具
+
+* [建立虚拟机和空域载具之间的连接](./air/setup_and_connect.md)
+
+
+
+## 4. 水域载具
+
+___
 
 如果对文档中的任何问题可以在 [本文档的源码仓库](https://github.com/OpenHUTB/templte) 中的 [问题](https://github.com/OpenHUTB/templte/issues) 页面讨论或者提交 [拉取请求](https://github.com/OpenHUTB/.github/blob/master/CONTRIBUTING.md) 直接修改文档。
 

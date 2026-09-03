@@ -83,7 +83,7 @@ pip install rosdepc
 -->
 
 
-## Matlab 验证 Carla ROS 连接
+## Matlab 验证 Carla ROS 连接（可选）
 将 Matlab 连接到在 VM Ware 中运行的 ROS 主机的 11311 端口。
 ```shell
 # 注意命令中的IP地址需要改为虚拟机中的地址，通过ifconfig查看
@@ -131,4 +131,5 @@ rostopic list
 
 * [Set Up and Connect to CARLA Simulator](https://ww2.mathworks.cn/help/ros/ug/set-up-and-connect-to-carla-simulator.html)
 * [支持 0.9.16](https://github.com/carla-simulator/ros-bridge/issues/763)
+* [ROS rviz工具使用](https://smarttofdoc.readthedocs.io/en/latest/Tutorial/ROS/rosrviz.html)
 
