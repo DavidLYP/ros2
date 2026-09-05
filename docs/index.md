@@ -1,8 +1,8 @@
 title: 主页
 
-# [模拟器的 ROS2 教程]([https://github.com/OpenHUTB/template](https://github.com/OpenHUTB/ros2))
+# [模拟器的 ROS 文档](https://github.com/OpenHUTB/ros2)
 
-欢迎使用 OpenHUTB 的  ROS2 教程 [@he2024dynsyn]。
+欢迎使用 OpenHUTB 的  ROS 文档 [@macenski2022robot]。
 
 - [简介](#list)
   - [入门](#introduction)
@@ -30,7 +30,7 @@ ROS每章节运行代码:
 [第二章](<./Run_code_for_%20the_%20chapter/ROS理论与实践第二章代码运行.md>)
 
 
-## 2. 地面载具
+## 2. 地面载具  <span id='ground_vehicle'></span>
 
 * [建立虚拟机和地面载具之间的连接](./set_up_and_connect_to_carla.md)
 
