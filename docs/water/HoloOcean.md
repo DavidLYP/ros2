@@ -34,7 +34,7 @@
 
 ### Docker（推荐）
 
-请参阅 [docker/README.md](./docker.md) 获取设置说明。提供[开发](./docker_dev.md)和[运行时](./docker_runtime.md)两种配置。
+请参阅 [Docker 开发环境](./docker.md) 获取设置说明。提供[开发](./docker.md)和[运行时](./docker_runtime.md)两种配置。
 
 
 ### 从源码安装
@@ -64,7 +64,7 @@ ros2 launch holoocean_main holoocean_launch.py
 ros2 launch holoocean_examples joy_launch.py
 ```
 
-请参阅 [holoocean_examples.md](./holoocean_examples.md)，获取完整的设置说明、按键映射及配置参考。
+请参阅[水域载具示例](./holoocean_examples.md)，获取完整的设置说明、按键映射及配置参考。
 
 ![Joystick multi-agent control](../img/water/MultiAgentJoystick.png)
 
@@ -94,40 +94,40 @@ ros2 launch holoocean_examples command_launch.py
 
 | 话题 | 类型 | 描述 |
 |---|---|---|
-| `command/agent` | `AgentCommand` | Thruster/actuator commands for all agents (for Fossen agents, messages with `frame_id` set to `body` are routed to the Fossen `set_u_control` interface) |
-| `command/sensor` | `SensorCommand` | Sensor configuration commands (e.g. camera rotation) |
-| `depth` | `DesiredCommand` | Depth setpoint for autopilot mode |
-| `heading` | `DesiredCommand` | Heading setpoint for autopilot mode |
-| `speed` | `DesiredCommand` | Speed setpoint for autopilot mode |
-| `debug/points` | `visualization_msgs/Marker` | Debug points to draw in the simulation |
+| `command/agent` | `AgentCommand` | 针对所有代理的推进器/执行器指令（对于福森代理，`frame_id` 设为 `body` 的消息会被路由至福森的 `set_u_control` 接口）  |
+| `command/sensor` | `SensorCommand` | 传感器配置指令（例如：摄像头旋转） |
+| `depth` | `DesiredCommand` | 自动驾驶模式的深度设定值 |
+| `heading` | `DesiredCommand` | 自动驾驶模式的航向设定值 |
+| `speed` | `DesiredCommand` | 自动驾驶模式的速度设定值 |
+| `debug/points` | `visualization_msgs/Marker` | 在仿真中绘制的调试点 |
 
 ### 发布的话题
 
 | 话题 | 类型 | 描述 |
 |---|---|---|
-| `<agent>/<SensorName>` | varies | Sensor data for each agent (see below) |
-| `/clock` | `rosgraph_msgs/Clock` | Simulation time |
+| `<agent>/<SensorName>` | varies | 每个代理的传感器数据（见下文） |
+| `/clock` | `rosgraph_msgs/Clock` | 模拟时间 |
 
 传感器话题名称遵循 `<agent_name>/<sensor_name>` 的格式。如果场景文件中未指定传感器名称，则默认使用传感器类型名称。
 
 
 ### 服务
 
-| Service | Type | Description |
+| 服务 | 类型 | 描述 |
 |---|---|---|
-| `reset` | `std_srvs/Trigger` | Reset the simulation environment |
-| `control_mode` | `SetControlMode` | Change an agent's control mode |
+| `reset` | `std_srvs/Trigger` | 重置模拟环境 |
+| `control_mode` | `SetControlMode` | 更改代理的控制模式 |
 
 ### 参数
 
-| Parameter | Type | Default | Description |
+| 参数 | 类型 | 默认值 | 描述 |
 |---|---|---|---|
-| `scenario_path` | string | `""` | Path to the scenario JSON file |
-| `relative_path` | bool | `true` | Resolve `scenario_path` relative to the package share directory |
-| `show_viewport` | bool | `true` | Show the Unreal Engine viewport window |
-| `draw_arrow` | bool | `true` | Draw a heading arrow for each Fossen agent in the simulation |
-| `render_quality` | int | `-1` | Render quality: 0 = low, 1 = normal, 2 = high. -1 = default |
-| `publish_commands` | bool | `true` | Publish computed control surface commands back to ROS |
+| `scenario_path` | string | `""` | 场景 JSON 文件的路径 |
+| `relative_path` | bool | `true` | 相对于包的共享目录解析 `scenario_path` |
+| `show_viewport` | bool | `true` | 显示虚幻引擎视窗 |
+| `draw_arrow` | bool | `true` | 在模拟中为每个福森代理绘制一个朝向箭头。  |
+| `render_quality` | int | `-1` | 渲染质量：0 = 低，1 = 普通，2 = 高。-1 = 默认 |
+| `publish_commands` | bool | `true` | 将计算出的控制面指令发布回 ROS |
 
 ## 记录传感器数据
 
@@ -144,10 +144,9 @@ ros2 bag record /holoocean/auv0/RotationSensor /holoocean/auv0/LocationSensor
 
 ## 参考
 
-* [byu-holoocean/holoocean-ros](https://github.com/byu-holoocean/holoocean-ros)
-
-- [HoloOcean repository](https://github.com/byu-holoocean/HoloOcean)
-- [HoloOcean documentation](https://byu-holoocean.github.io/holoocean-docs/)
-- [ROS 2 documentation](https://docs.ros.org/en/humble/index.html)
+- [holoocean-ros](https://github.com/byu-holoocean/holoocean-ros)
+- [HoloOcean 仓库](https://github.com/byu-holoocean/HoloOcean)
+- [HoloOcean 文档](https://byu-holoocean.github.io/holoocean-docs/)
+- [ROS 2 文档](https://docs.ros.org/en/humble/index.html)
 
 

@@ -1,56 +1,56 @@
-## HoloOcean ROS2 Runtime Docker Container
+## HoloOcean ROS2 运行时 Docker 容器
 
-This container is not packaged and provided on DockerHub due to the EULA licensing with Unreal Engine.
+受限于虚幻引擎的最终用户许可协议（EULA），该容器未打包发布至 DockerHub。
 
 
-## Usage
+## 使用方法
 
-1. **Unreal Engine Agreements**  
-   Ensure you have signed the Unreal Engine agreements.
+1. **虚幻引擎协议**  
+   请确保您已签署虚幻引擎相关协议。
 
-1. **Clone the repository** and navigate to the `docker/runtime` folder:
+2. **克隆仓库** 并进入 `docker/runtime` 目录：
 
    ```bash
    git clone git@github.com:byu-holoocean/holoocean-ros.git
    cd holoocean-ros/docker/runtime
    ```
 
-2. **Build the container:**
+3. **构建容器：**
 
    ```bash
    ./build_container.sh
    ```
 
-   - The script will:
-     - Check for Docker installation
-     - Prompt for EULA confirmation
-     - Guide you through X11 display access setup
-     - Clone the HoloOcean repository into a tmp folder (requires SSH access)
-     - Builds the Docker image
-     - Optionally start the container
+   - 该脚本将执行以下操作：
+     - 检查 Docker 是否已安装
+     - 提示确认最终用户许可协议 (EULA)
+     - 引导您完成 X11 显示访问权限的设置
+     - 将 HoloOcean 仓库克隆到临时文件夹（需要 SSH 访问权限）
+     - 构建 Docker 镜像
+     - （可选）启动容器
 
-3. **Display Access (for GUI):**
-   - If prompted, allow Docker to access your X11 display:
+4. **显示访问权限（用于 GUI）：**
+   - 如果出现提示，请允许 Docker 访问您的 X11 显示：
      ```bash
      xhost +local:docker
      ```
-   - **Note:** This command must be re-run after every reboot.
+   - **注意：** 每次重启后都必须重新运行此命令。
 
 
 ## **build_container.sh**
 
-#### **Command-line Options**
+#### **命令行选项**
 
-- `-b `: Specify a git branch for HoloOcean (default: `develop`)
+- `-b `: 指定 HoloOcean 的 git 分支（默认：`develop`）
 
 
-## **Usage Tips**
+## **使用提示**
 
-- **Rebuilding:** If you change the Dockerfile or dependencies, re-run the script to rebuild the image. If you plan to rebuild consistently the dev image is better suited for frequent changes.
+- **重新构建：** 如果修改了 Dockerfile 或依赖项，请重新运行脚本以重建镜像。如果计划频繁进行重建，建议使用开发（dev）镜像，它更适合应对频繁的变更。
 
-## **Security Notice**
+## **安全须知**
 
-> **WARNING:**  
-> This image contains proprietary software and is intended for internal use only due to EULA with Epic Games.
-> **Do NOT share a built docker image outside your organization.**
+> **警告：**  
+> 该镜像包含专有软件，且受限于与 Epic Games 签署的最终用户许可协议（EULA），仅供内部使用。
+> **请勿在组织外部共享构建好的 Docker 镜像。**
 
