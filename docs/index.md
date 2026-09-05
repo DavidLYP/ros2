@@ -39,9 +39,15 @@ ROS每章节运行代码:
 
 * [建立虚拟机和空域载具之间的连接](./air/setup_and_connect.md)
 
+* [空域模拟器的 ROS 封装器](./air/ros_pkgs.md)
+
+* [低空载具的 ROS 示例教程](https://openhutb.github.io/air_doc/airsim_tutorial_pkgs/)
+
 
 
 ## 4. 水域载具
+
+* [水域载具 ROS2 接口]()
 
 ___
 
