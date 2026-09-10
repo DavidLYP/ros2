@@ -4,13 +4,13 @@
 
 ## 1.查看驱动
 
-![](assets/图片1.png)
+![](./img/图片1.png)
 
 ### 一、查看本机 NVIDIA 显卡硬件
 
 输入 `lspci | grep -i nvidia`，回车 
 
-![](assets/图片2.png)
+![](./img/图片2.png)
 
 `lspci` 是查看主板 PCI 硬件设备的命令；`grep -i nvidia` 筛选出 NVIDIA 设备。
 
@@ -28,7 +28,7 @@
 ### 三、查看驱动版本
 
 输入 `dkms status | grep nvidia`，回车（图示为 570 版本）
-![](assets/图片3.png)
+![](./img/图片3.png)
 
 自装 Ubuntu20.04 的驱动版本通常为 `4xx` 驱动
 
@@ -110,14 +110,14 @@ nvidia-utils-580-server
 
 浏览器直接下载的正确链接（复制这一条，粘贴到火狐地址栏回车）
 `https://ollama.com/download/ollama-linux-amd64.tar.zst`
-![](assets/图片4.png)
+![](./img/图片4.png)
 
 输入后会直接下载到 Downloads（下载）文件夹
 
 下载完成后，打开终端，复制这条解压命令执行
 `sudo tar x -C /usr -f ~/Downloads/ollama-linux-amd64.tar.zst`
 
-![](assets/图片5.png)
+![](./img/图片5.png)
 
 > 标蓝部分看自己文件名叫啥，记得改
 >
@@ -134,10 +134,10 @@ nvidia-utils-580-server
 > （这里以 deepseek 为例）
 > `ollama run deepseek-r1:7b`
 >
-> ![](assets/图片6.png)
+> ![](./img/图片6.png)
 >
 > 这样就完成了
-> ![](assets/图片7.png)
+> ![](./img/图片7.png)
 
 ## 4. 后续启动，以 deepseek 为例
 
