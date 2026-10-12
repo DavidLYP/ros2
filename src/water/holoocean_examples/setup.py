@@ -28,6 +28,7 @@ setup(
             'joy_holoocean = holoocean_examples.joy_holoocean:main',
             'waypoint_follower = holoocean_examples.waypoint_follower:main',
             'camera_hud = holoocean_examples.camera_hud:main',
+            'formation_controller = holoocean_examples.formation_controller:main',
         ],
     },
 )
